@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         
                       //Downloading Image
                         db.collection("Images")
-                        .doc(id)
+                        .doc(uid)
                         .set({
                           name: imgName.value,
                           id: uid,
