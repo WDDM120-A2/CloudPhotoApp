@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
+    
 }
 
 /*smooth scroll*/
@@ -17,6 +18,13 @@ html {
     float: right;
     margin-right: 50px;
 }
+
+.gallery{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 /*Footer*/
 footer {
@@ -32,4 +40,15 @@ footer {
 
 img {
     width: 30rem;
+}
+
+.img_wrapper{ 
+    position: relative;
+}
+
+.delete-icon {
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }

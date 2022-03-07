@@ -107,8 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         const img = document.createElement("img");
                         img.src = downloadURL;
 
+                        //Delete an image
+                        const deleteBtn = document.createElement("span");
+
+                        deleteBtn.innerHTML= `<img class="delete-icon" src="./img/delete-icon.svg">` ;
+
                         imgWrapper.append(img);
+                        imgWrapper.append(deleteBtn);
                         gallery.append(imgWrapper);
+
+
+
                   });
                 });
               });
