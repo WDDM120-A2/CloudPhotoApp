@@ -1,33 +1,32 @@
 
 // It's code from lesson, we can use async / await here
-// document.addEventListener("DOMContentLoaded", function () {
-//
-//   const fileUpload = document.getElementById("fileUpload");
-//   const imgName = document.getElementById("imgName");
-//   const submitBtn = document.getElementById("submitBtn");
-//
-//   const db = firebase.firestore();
-//   const storage = firebase.storage();
-//
-//   let file = "";
-//   let fileName = "";
-//   let extension = "";
-//
-//   fileUpload.addEventListener("change", function (e) {
-//     file = e.target.files[0];
-//     fileName = file.name.split(".").shift();
-//     extension = file.name.split(".").pop();
-//
-//     imgName.value = fileName;
-//   });
-//
-//   submitBtn.addEventListener("click", function () {
-//     if (imgName.value) {
-//       const id = db.collection("Images").doc().id;
-//
-//       const storageRef = storage.ref(`images/${id}.${extension}`);
-//
-//       const uploadTask = storageRef.put(file);
+document.addEventListener("DOMContentLoaded", function () {
+
+  const fileUpload = document.getElementById("fileUpload");
+  const imgName = document.getElementById("imgName");
+  const uploadBtn = document.getElementById("uploadBtn");
+
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
+  let file = "";
+  let fileName = "";
+  let extension = "";
+
+  fileUpload.addEventListener("change", function (e) {
+    //console.log("e", e);
+    file = e.target.files[0];
+    fileName = file.name.split(".").shift();
+    extension = file.name.split(".").pop();
+
+    imgName.value = fileName;
+  });
+
+  uploadBtn.addEventListener("click", function () {
+    if (imgName.value) {
+      const id = db.collection("Images").doc().id;
+      const storageRef = storage.ref(`images/${id}.${extension}`);
+      const uploadTask = storageRef.put(file);
 //
 //       uploadTask.on(
 //         "state_changed",
@@ -45,7 +44,7 @@
 //
 //             const fileUpload = document.getElementById("fileUpload");
 //             const imgName = document.getElementById("imgName");
-//             const submitBtn = document.getElementById("submitBtn");
+//             const uploadBtn = document.getElementById("uploadBtn");
 //             const gallery = document.getElementById("gallery");
 //
 //             const db = firebase.firestore();
@@ -142,4 +141,4 @@
 //       );
 //     }
 //   });
-// });
+});
