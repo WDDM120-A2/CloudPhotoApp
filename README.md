@@ -31,3 +31,11 @@ possible structure for picture
     pictureUrl: 'pictureUrl',
     userUid: 'uid'
 }
+
+-----------------------------------------------------------------------------------
+(Faye)
+User UID was set to folder name to distinguish which image folder to take. We can expand this to like dropbox and create another folder for documents etc.
+Next To Do:
+1. Download
+2. Share via email???
+3. CSS (including user and picture structure)
