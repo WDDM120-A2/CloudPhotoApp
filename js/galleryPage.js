@@ -87,6 +87,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 listRef.listAll().then(function (res) {
                     res.items.forEach(function (itemRef) {
                     itemRef.getDownloadURL().then((downloadURL) => {
+                        
+                      //Downloading Image
+                        db.collection("Images")
+                        .doc(id)
+                        .set({
+                          name: imgName.value,
+                          id: uid,
+                          image: downloadURL,
+                          timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+                        })
+                        .then(()=>console.log('Document written',))
+                        .catch((err)=> console.log("Error in adding document", err));
+
                     
                         const imgWrapper = document.createElement("div");
                         imgWrapper.className = "img_wrapper";
@@ -100,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
               });
             });
+
         }
 
             createGallery();
