@@ -51,4 +51,6 @@ img {
     position: absolute;
     right: 0;
     top: 0;
+    background: #e8e8e8a6;
+    cursor: pointer;
 }

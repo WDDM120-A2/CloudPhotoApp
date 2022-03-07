@@ -112,6 +112,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         deleteBtn.innerHTML= `<img class="delete-icon" src="./img/delete-icon.svg">` ;
 
+                        deleteBtn.addEventListener("click", function(){
+                          itemRef
+                          .delete()
+                          .then(function() {
+                            db.collection("Images").doc(itemRef.name.split(".").shift()).delete().then(function(){
+                              console.log(`Successfully deleted image`);
+                              createGallery();
+                            })
+
+                          })
+                          .catch((err) => console.log("Error in deleting image"), err);
+
+                        });
+
                         imgWrapper.append(img);
                         imgWrapper.append(deleteBtn);
                         gallery.append(imgWrapper);
