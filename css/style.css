@@ -67,6 +67,23 @@ form{
     padding: 20px;
 }
 
+@media screen and (max-width: 750px) {
+    .container {
+        width: 100%;
+    }
+    .forms {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    form {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 /*Footer*/
 footer {
     width: 100%;
