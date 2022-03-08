@@ -15,8 +15,9 @@ html {
 
 /*header*/
 #humber-logo {
-    float: right;
+    /* float: right; */
     margin-right: 50px;
+    height: 50px;
 }
 
 .gallery{
@@ -24,7 +25,44 @@ html {
     display: flex;
     flex-wrap: wrap;
 }
+/*Form*/
+main {
+    background-image: url("../img/school-bg.jpg");
+    background-size: cover;
 
+    height: 100vh;
+}
+
+.container {
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 0.5rem;
+    background: rgba(241, 239, 239, 0.733);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+}
+.forms {
+    display: flex;
+    gap: 10px;
+}
+
+form{
+    margin: 0 auto;
+    width: 100%;
+}
 
 /*Footer*/
 footer {
