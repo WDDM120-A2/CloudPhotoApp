@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           image: downloadURL,
                           timestamp:firebase.firestore.FieldValue.serverTimestamp(),
                         })
-                        .then(()=>console.log('Document written',))
+                        .then(()=>console.log(downloadURL))
                         .catch((err)=> console.log("Error in adding document", err));
 
                     

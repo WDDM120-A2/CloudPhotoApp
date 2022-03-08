@@ -55,13 +55,16 @@ main {
 
 }
 .forms {
+    margin: auto;
     display: flex;
-    gap: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 form{
     margin: 0 auto;
     width: 100%;
+    padding: 20px;
 }
 
 /*Footer*/
