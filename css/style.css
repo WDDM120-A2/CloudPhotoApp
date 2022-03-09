@@ -20,11 +20,6 @@ html {
     height: 50px;
 }
 
-.gallery{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-}
 /*Form*/
 main {
     background-image: url("../img/school-bg.jpg");
@@ -94,6 +89,12 @@ footer {
     opacity: 0.6;
     padding-left: 20px;
     margin-top: auto;
+}
+/*Gallery*/
+.gallery{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 img {
