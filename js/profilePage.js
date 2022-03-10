@@ -1,23 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // // Show display photo if photoURL is existing
-    //     const db = firebase.firestore();
-    //     const storage = firebase.storage();
-        
-    //     firebase.auth().onAuthStateChanged((user) => {
-    //     // const user = db.currentUser;
-    //     console.log(user)
-    //     const fName = user.firstName;
-    //     const lName = user.lastName;
-    //     const email = user.email;
-    //     const photoURL = user.photoURL;
-    //     document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
-    //     document.getElementsByName('fName')[0].placeholder = `${fName}`;
-    //     document.getElementsByName('lName')[0].placeholder = `${lName}`;
-    //     document.getElementsByName('email')[0].placeholder = `${email}`;
-    //     // console.log(user)
-    //     })
-
     const db = firebase.firestore();
     const storage = firebase.storage();
     firebase.auth().onAuthStateChanged((user) => {
@@ -30,15 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const fName = userData.firstName;
                 const lName = userData.lastName;
                 const email = userData.email;
+                const dName = user.displayName
                 const photoURL = user.photoURL;
-                document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
+                const contact = user.phoneNumber;
+                console.log(user)
+                
+                document.getElementsByName('dName')[0].placeholder = `${dName}`;
                 document.getElementsByName('fName')[0].placeholder = `${fName}`;
                 document.getElementsByName('lName')[0].placeholder = `${lName}`;
                 document.getElementsByName('email')[0].placeholder = `${email}`;
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
+                document.getElementsByName('contact')[0].placeholder = `${contact}`;
+                document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
+            } 
             }).catch((error) => {
                 console.log("Error getting document:", error);
         });
@@ -46,12 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //Uploading new display photo
-
       const selectPhoto = document.getElementById("selectPhoto");
       const dpUploader = document.getElementById("dpUploader");
     
-
-
       selectPhoto.addEventListener("change", function (e) {
         file = e.target.files[0];
         fileName = file.name.split(".").shift();
@@ -62,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         firebase.auth().onAuthStateChanged((user) => {
             const uid = user.uid;
-    
-        
+            
         if (fileName) {
             const id = db.collection("Images").doc().id;
             const storageRef = storage.ref(`${uid}/profilePhoto/${uid}-dp.${extension}`);
@@ -79,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       function () {
                         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                         user.updateProfile({photoURL: downloadURL})
+                        // Displaying uploaded photo
                         document.getElementById('profilePhoto').setAttribute(`src`, `${downloadURL}`);
                     
                           db.collection("Images")
@@ -102,19 +84,4 @@ document.addEventListener("DOMContentLoaded", function () {
                   }
                 });
             });
-
-    //Display Profile Picture   
-
-    // function updatePhoto() {
-
-    //         firebase.auth().onAuthStateChanged((user) => {
-    //             const uid = user.uid;
-    //             const storage = firebase.storage();
-    //             storage.ref(`${uid}/profilePhoto/${uid}-dp.${extension}`).getDownloadURL()
-    //             .then((url) => {
-    //                 console.log(url)
-    //                 document.getElementById('profilePhoto').setAttribute(`src`, `${url}`);
-    //         })
-    //     })
-    // }
 });
