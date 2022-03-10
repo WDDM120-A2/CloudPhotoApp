@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
                       function () {
                         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                         user.updateProfile({photoURL: downloadURL})
-                        document.getElementById('profilePhoto').setAttribute(`src`, `${user.photoURL}`);
+                        document.getElementById('profilePhoto').setAttribute(`src`, `${downloadURL}`);
+                    
                           db.collection("Images")
                             .doc(id)
                             .set({
