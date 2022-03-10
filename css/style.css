@@ -113,3 +113,11 @@ img {
     background: #e8e8e8a6;
     cursor: pointer;
 }
+
+
+/* FOR PROFILE PAGE */
+#profilePhoto {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
