@@ -1,28 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Show display photo if photoURL is existing
-    firebase.auth().onAuthStateChanged((user) => {
-        const id = db.collection("Images").doc().id;
-        console.log(id.lastName)
+    // // Show display photo if photoURL is existing
+    //     const db = firebase.firestore();
+    //     const storage = firebase.storage();
         
-        const fName = user.firstName;
-        const lName = user.lastName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
-        document.getElementsByName('fName')[0].placeholder = `${fName}`;
-        document.getElementsByName('lName')[0].placeholder = `${lName}`;
-        document.getElementsByName('email')[0].placeholder = `${email}`;
-        // console.log(user)
-    });
+    //     firebase.auth().onAuthStateChanged((user) => {
+    //     // const user = db.currentUser;
+    //     console.log(user)
+    //     const fName = user.firstName;
+    //     const lName = user.lastName;
+    //     const email = user.email;
+    //     const photoURL = user.photoURL;
+    //     document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
+    //     document.getElementsByName('fName')[0].placeholder = `${fName}`;
+    //     document.getElementsByName('lName')[0].placeholder = `${lName}`;
+    //     document.getElementsByName('email')[0].placeholder = `${email}`;
+    //     // console.log(user)
+    //     })
+
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+    firebase.auth().onAuthStateChanged((user) => {
+        const uid = user.uid;
+        var docRef = db.collection("users").doc(`${uid}`);
+
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                const userData = doc.data();
+                const fName = userData.firstName;
+                const lName = userData.lastName;
+                const email = userData.email;
+                const photoURL = user.photoURL;
+                document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
+                document.getElementsByName('fName')[0].placeholder = `${fName}`;
+                document.getElementsByName('lName')[0].placeholder = `${lName}`;
+                document.getElementsByName('email')[0].placeholder = `${email}`;
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+            }).catch((error) => {
+                console.log("Error getting document:", error);
+        });
+    })
+
 
     //Uploading new display photo
 
       const selectPhoto = document.getElementById("selectPhoto");
       const dpUploader = document.getElementById("dpUploader");
     
-      const db = firebase.firestore();
-      const storage = firebase.storage();
+
 
       selectPhoto.addEventListener("change", function (e) {
         file = e.target.files[0];
