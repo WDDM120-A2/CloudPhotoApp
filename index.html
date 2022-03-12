@@ -13,6 +13,11 @@
   <title>Pictures gallery</title>
 </head>
 <body>
+<div id="loader">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
 <main>
   <section class="container">
     <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
@@ -35,12 +40,12 @@
             <h2>Login form</h2>
             <div class="col-6">
               <label for="login-email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="login-email" aria-describedby="email">
+              <input type="email" class="form-control" id="login-email" aria-describedby="email" required>
               <div class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="col-6">
               <label for="login-password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="login-password">
+              <input type="password" class="form-control" id="login-password" required>
             </div>
             <div class="col-6" style="margin-top: 20px;">
               <button type="submit" class="btn btn-primary">Login</button>
@@ -52,20 +57,20 @@
             <h2>Register form</h2>
             <div class="col-6">
               <label for="register-firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="register-firstName" aria-describedby="first name">
+              <input type="text" class="form-control" id="register-firstName" aria-describedby="first name" required>
             </div>
             <div class="col-6">
               <label for="register-lastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="register-lastName" aria-describedby="last name">
+              <input type="text" class="form-control" id="register-lastName" aria-describedby="last name" required>
             </div>
             <div class="col-6">
               <label for="register-email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="register-email" aria-describedby="email">
+              <input type="email" class="form-control" id="register-email" aria-describedby="email" required>
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="col-6">
               <label for="register-password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="register-password">
+              <input type="password" class="form-control" id="register-password" required>
             </div>
             <div class="col-6" style="margin-top: 20px;">
               <button type="submit" class="btn btn-primary">Register</button>

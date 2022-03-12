@@ -26,8 +26,15 @@ function initHandlers(){
         const pathname = window.location.pathname;
         const galleryPath = '/gallery.html';
         if (pathname !== galleryPath) {
-          // set timeout to have enough time to save user before redirect
-          // todo separate register page
+
+          const currentPage = sessionStorage.getItem('currentPage');
+          if (currentPage && currentPage === 'login'){
+            window.location.pathname = galleryPath;
+            return;
+          }
+
+          // set timeout to have enough time to save user before redirect during registration
+          document.getElementById('loader').style.display = "flex";
           setTimeout(() => {
             window.location.pathname = galleryPath;
           }, 2000)
