@@ -52,4 +52,8 @@ function initHandlers(){
       }
     });
   }
+
+  function setHeaderData (user) {
+
+  }
 }

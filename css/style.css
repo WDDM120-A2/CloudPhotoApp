@@ -24,8 +24,8 @@ html {
 main {
     background-image: url("../img/school-bg.jpg");
     background-size: cover;
-
-    height: 100vh;
+    /*all height minus footer*/
+    height: calc(100vh - 38px);
 }
 
 .container {

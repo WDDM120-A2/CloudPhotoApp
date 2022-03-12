@@ -8,24 +8,23 @@ npm start
 
 #TODO
 user registration (Olha)
+user login (Olha)
 store user in db during user registration (Olha)
 forms validation
-show somewhere in the header 'hello, user'
-user login (Olha)
-ability to save an image
-save image and description in db
-show saved images + description
-folder for images?
+show user data in the header
 
 ----------------------------------------------------------------------------------
-possible structure for user
+structure for user
 {
  firstName: 'firstName',
  lastName: 'lastName',
- uid: 'uid'
+ uid: 'uid',
+ displayName: 'displayName',
+ photoURL: 'photoURL',
+ phoneNumber: 'phoneNumber',
 }
 
-possible structure for picture
+structure for picture
 {
     description: 'description',
     pictureUrl: 'pictureUrl',
