@@ -77,6 +77,18 @@ form{
     cursor: pointer;
 }
 
+.profile {
+    display: flex;
+}
+
+.user-data {
+    margin-left: 10px;
+}
+
+#headerUserImg {
+    width: 40px;
+    object-fit: contain;
+}
 @media screen and (max-width: 750px) {
     .container {
         width: 100%;

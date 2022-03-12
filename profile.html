@@ -17,6 +17,13 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid justify-content-start" id="header">
+      <section class="profile">
+        <img src="img/default-image.png" id="headerUserImg" alt="user image">
+        <section class="user-data">
+          <div id="headerDisplayName">Your name</div>
+          <div id="headerPhoneNumber">Your phone number</div>
+        </section>
+      </section>
       <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
       <a href="gallery.html" class="navbar-brand">Gallery</a>
       <a href="profile.html" class="navbar-brand">Account</a>
@@ -68,7 +75,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<!-- <script src="js/functions.js"></script> -->
+<script src="js/functions.js"></script>
 <script src="js/profilePage.js"></script>
 <script>
     const firebaseConfig = {

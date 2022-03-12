@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         firebase.auth().onAuthStateChanged((user) => {
             const uid = user.uid;
-            console.log(uid)
+            console.log(uid);
+            setHeaderUserData();
           });
   
   

@@ -11,9 +11,14 @@ function getFirebaseModules(){
   return {db, storage, auth };
 }
 
-function getUser(){
-  const {auth} = getFirebaseModules();
-  return auth.currentUser;
+async function getUser(){
+  const {db, auth} = getFirebaseModules();
+  const doc = await db.collection("users").doc(`${auth.currentUser.uid}`).get();
+  if(doc.exists){
+    return doc.data();
+  } else {
+    throw new Error('no such user');
+  }
 }
 
 function initHandlers(){
@@ -59,8 +64,27 @@ function initHandlers(){
       }
     });
   }
+}
 
-  function setHeaderData (user) {
+async function setHeaderUserData () {
+  try {
+    const user = await getUser();
+    if (user.photoURL){
+      document.getElementById('headerUserImg').src = user.photoURL;
+    }
 
+    if (user.phoneNumber){
+      document.getElementById('headerPhoneNumber').textContent = user.phoneNumber;
+    }
+
+    if (user.displayName){
+      document.getElementById('headerDisplayName').textContent = user.displayName;
+    }
+
+    if (user.firstName && user.lastName){
+      document.getElementById('headerDisplayName').textContent = `${user.firstName} ${user.lastName}`;
+    }
+  } catch (err){
+    console.log(err)
   }
 }
