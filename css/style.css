@@ -143,8 +143,88 @@ img {
 
 
 /* FOR PROFILE PAGE */
-#profilePhoto {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
+.profileSettings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items: center; */
 }
+
+#profilePhoto {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin: 2rem;
+}
+
+input[type=text],
+input[type=password] {
+    display: block;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 1px darkslategrey;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border: 3px solid #555;
+}
+
+#progressBar {
+    display: none;
+    margin: 1rem;
+    width: 10rem;
+}
+
+#photoSection,
+#personalInfo,
+#security {
+    display: flex;
+    flex-direction: column;
+}
+
+#photoSection {
+    align-items: center;
+}
+
+#personalInfo,
+#security {
+    flex-grow: 0.2;
+}
+
+#dpUploader,
+#updateBtn,
+#pwdBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    /* width: 40%; */
+    cursor: pointer;
+}
+
+#dpUploader {
+    min-width: 8rem;
+}
+
+#dpUploader:hover,
+#updateBtn:hover,
+#pwdBtn:hover {
+    background-color: yellowgreen;
+    color: black;
+}
+
+
+
+  
