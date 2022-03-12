@@ -11,9 +11,14 @@ function getFirebaseModules(){
   return {db, storage, auth };
 }
 
-function getUser(){
-  const {auth} = getFirebaseModules();
-  return auth.currentUser;
+async function getUser(){
+  const {db, auth} = getFirebaseModules();
+  const doc = await db.collection("users").doc(`${auth.currentUser.uid}`).get();
+  if(doc.exists){
+    return doc.data();
+  } else {
+    return null;
+  }
 }
 
 function initHandlers(){
@@ -26,8 +31,15 @@ function initHandlers(){
         const pathname = window.location.pathname;
         const galleryPath = '/gallery.html';
         if (pathname !== galleryPath) {
-          // set timeout to have enough time to save user before redirect
-          // todo separate register page
+
+          const currentPage = sessionStorage.getItem('currentPage');
+          if (currentPage && currentPage === 'login'){
+            window.location.pathname = galleryPath;
+            return;
+          }
+
+          // set timeout to have enough time to save user before redirect during registration
+          document.getElementById('loader').style.display = "flex";
           setTimeout(() => {
             window.location.pathname = galleryPath;
           }, 2000)
@@ -40,16 +52,36 @@ function initHandlers(){
       }
     });
   });
+}
 
-  const logoutButton = document.getElementById('logout-button');
-  if (logoutButton) {
-    logoutButton.addEventListener('click', async (event) => {
-      try {
-        const {auth} = getFirebaseModules();
-        await auth.signOut();
-      } catch (e){
-        logError(e);
-      }
-    });
+async function logOut(){
+  try {
+    const {auth} = getFirebaseModules();
+    await auth.signOut();
+  } catch (e){
+    logError(e);
+  }
+}
+
+async function setHeaderUserData () {
+  try {
+    const user = await getUser();
+    if (user.photoURL){
+      document.getElementById('headerUserImg').src = user.photoURL;
+    }
+
+    if (user.phoneNumber){
+      document.getElementById('headerPhoneNumber').textContent = user.phoneNumber;
+    }
+
+    if (user.displayName){
+      document.getElementById('headerDisplayName').textContent = user.displayName;
+    }
+
+    if (user.firstName && user.lastName){
+      document.getElementById('headerDisplayName').textContent = `${user.firstName} ${user.lastName}`;
+    }
+  } catch (err){
+    console.log(err)
   }
 }

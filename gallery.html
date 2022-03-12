@@ -17,14 +17,20 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid justify-content-start" id="header">
+      <section class="profile">
+        <img src="img/default-image.png" id="headerUserImg" alt="user image">
+        <section class="user-data">
+          <div id="headerDisplayName">Your name</div>
+          <div id="headerPhoneNumber">Your phone number</div>
+        </section>
+      </section>
       <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
       <a href="gallery.html" class="navbar-brand">Gallery</a>
-      <a href="profile.html" class="profile-page">Account</a>
-      <button type="button" id="logout-button" class="btn btn-primary">Logout</button>
+      <a href="profile.html" class="navbar-brand">Account</a>
+      <img id="logout-button" onclick="logOut()" src="img/sign-out.svg" alt="sign out button"/>
     </div>
   </nav>
 </header>
-
 
 <div class="photoUpload">
   <div id="photoupload">

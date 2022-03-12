@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const db = firebase.firestore();
     const storage = firebase.storage();
     firebase.auth().onAuthStateChanged((user) => {
+        setHeaderUserData();
         const uid = user.uid;
         var docRef = db.collection("users").doc(`${uid}`);
 

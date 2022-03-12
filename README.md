@@ -5,27 +5,18 @@ Web application inspired by Google photo album. This app uses Firebase and Boots
 npm install
 npm start
 
-
-#TODO
-user registration (Olha)
-store user in db during user registration (Olha)
-forms validation
-show somewhere in the header 'hello, user'
-user login (Olha)
-ability to save an image
-save image and description in db
-show saved images + description
-folder for images?
-
 ----------------------------------------------------------------------------------
-possible structure for user
+structure for user
 {
- firstName: 'firstName',
- lastName: 'lastName',
- uid: 'uid'
+    firstName: 'firstName',
+    lastName: 'lastName',
+    uid: 'uid',
+    displayName: 'displayName',
+    photoURL: 'photoURL',
+    phoneNumber: 'phoneNumber',
 }
 
-possible structure for picture
+structure for picture
 {
     description: 'description',
     pictureUrl: 'pictureUrl',
@@ -33,6 +24,9 @@ possible structure for picture
 }
 
 -----------------------------------------------------------------------------------
+
+#TODO
+
 (Faye)
 User UID was set to folder name to distinguish which image folder to take. We can expand this to like dropbox and create another folder for documents etc.
 Next To Do:
