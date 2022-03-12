@@ -17,7 +17,7 @@ async function getUser(){
   if(doc.exists){
     return doc.data();
   } else {
-    throw new Error('no such user');
+    return null;
   }
 }
 
