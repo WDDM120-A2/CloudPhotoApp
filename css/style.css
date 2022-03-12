@@ -49,15 +49,13 @@ main {
     width: 50%;
 
 }
-.forms {
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+.forms{
+    margin-top: 20px;
+    width: 100%;
 }
 
 form{
-    margin: 0 auto;
     width: 100%;
     padding: 20px;
 }
