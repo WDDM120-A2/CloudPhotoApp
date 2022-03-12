@@ -15,6 +15,9 @@ document.getElementById('register-form').addEventListener('submit', async (event
       firstName,
       lastName,
       email,
+      displayName: '',
+      photoURL: '',
+      phoneNumber: '',
     }
 
     await db.collection("users").doc(uid).set(user);
