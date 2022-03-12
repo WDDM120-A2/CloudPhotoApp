@@ -52,17 +52,14 @@ function initHandlers(){
       }
     });
   });
+}
 
-  const logoutButton = document.getElementById('logout-button');
-  if (logoutButton) {
-    logoutButton.addEventListener('click', async (event) => {
-      try {
-        const {auth} = getFirebaseModules();
-        await auth.signOut();
-      } catch (e){
-        logError(e);
-      }
-    });
+async function logOut(){
+  try {
+    const {auth} = getFirebaseModules();
+    await auth.signOut();
+  } catch (e){
+    logError(e);
   }
 }
 
