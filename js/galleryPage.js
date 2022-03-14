@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     extension = file.name.split(".").pop();
 
     imgName.value = fileName;
+    document.getElementById(`setFileName`).style = "display: flex"
   });
 
   uploadBtn.addEventListener("click", function () {
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       uploadTask.on("state_changed", function (snapshot) {
           let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           progressBar.value = progress;
+          progressBar.style = `display: block`;
         },
         function (error) {
           console.log("Error:", error);
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           name: imgName.value,
                           id: id,
                           image: downloadURL,
+                          description: "",
                           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         })
                         .then(() => {
@@ -78,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
             function createGallery() {
+              progressBar.style = `display: none`;
+              document.getElementById(`setFileName`).style = "display: none"
                 firebase.auth().onAuthStateChanged((user) => {
                     const uid = user.uid;
                     console.log(uid)
@@ -96,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           name: imgName.value,
                           id: uid,
                           image: downloadURL,
+                          description: "",
                           timestamp:firebase.firestore.FieldValue.serverTimestamp(),
                         })
                         .then(()=>console.log(downloadURL))
@@ -106,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         imgWrapper.className = "img_wrapper";
 
                         const img = document.createElement("img");
+                        img.className = "uploadedImage";
                         img.src = downloadURL;
 
                         //Delete an image
