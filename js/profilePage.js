@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         file = e.target.files[0];
         fileName = file.name.split(".").shift();
         extension = file.name.split(".").pop();
+        
     });
     
     dpUploader.addEventListener("click", function () {
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     name: fileName,
                     id: id,
                     image: downloadURL,
+                    // description: "description",
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     
                     })
@@ -101,14 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 // console.log(user)
                 const fName = document.getElementById('fName').value;
                 const lName = document.getElementById('lName').value;
-                const email = document.getElementById('email').innerHTML;
                 const contact = document.getElementById('contact').value;
 
                 var userNow = db.collection("users").doc(`${uid}`);
                 userNow.update({
                     firstName: `${fName}`,
                     lastName: `${lName}`,
-                    email: `${email}`,
                     contact: `${contact}`
                 })
                 .then(function() {
