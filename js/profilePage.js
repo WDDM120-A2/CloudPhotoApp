@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const lName = userData.lastName;
                     const email = userData.email;
                     const dName = fName + ` ` + lName;
-                    const contact = userData.contact;
+                    const contact = userData.phoneNumber;
                     const photoURL = user.photoURL;
                     document.getElementById(`displayName`).innerText = `${dName}`;
                     document.getElementsByName('fName')[0].value = `${fName}`;
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 userNow.update({
                     firstName: `${fName}`,
                     lastName: `${lName}`,
-                    contact: `${contact}`
+                    phoneNumber: `${contact}`
                 })
                 .then(function() {
                     console.log("Document successfully written!" );
@@ -134,10 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const confirmPass = document.getElementById("confirmPass").value;
         const credential = firebase.auth.EmailAuthProvider.credential(user.email,oldPass);
         // Reauthenticate
-        user.reauthenticateWithCredential(credential);
+        // user.reauthenticateWithCredential(credential);
+        user.signInWithEmailAndPassword('email', oldPass)
 
         if(newPass == confirmPass) {
             user.updatePassword(newPass);
+            user.signInWithEmailAndPassword('email', newPass)
             alert("Password updated!")
 
         } else {
