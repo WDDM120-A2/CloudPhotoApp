@@ -63,15 +63,20 @@ async function logOut(){
   }
 }
 
+
 async function setHeaderUserData () {
   try {
     const user = await getUser();
-    if (user.photoURL){
-      document.getElementById('headerUserImg').src = user.photoURL;
-    }
+    console.log(user)
+    const auth = firebase.auth();
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        document.getElementById('headerUserImg').setAttribute(`src`, `${user.photoURL}`);
+      }
+    })
 
-    if (user.phoneNumber){
-      document.getElementById('headerPhoneNumber').textContent = user.phoneNumber;
+    if (user.contact){
+      document.getElementById('headerPhoneNumber').textContent = user.contact;
     }
 
     if (user.displayName){
@@ -85,3 +90,4 @@ async function setHeaderUserData () {
     console.log(err)
   }
 }
+
