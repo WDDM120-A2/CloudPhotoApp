@@ -126,21 +126,31 @@ footer {
 }
 /*Gallery*/
 .gallery{
-    margin: auto;
+    margin: 3rem;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
 }
 
-img {
-    width: 30rem;
-}
 
 .img_wrapper{ 
     position: relative;
+    margin: 1rem;
+    padding: 0.75rem;
+    background-color: lightslategray;
+    /* border-radius: 1rem; */
 }
 
+.uploadedImage {
+    /* width: 20rem; */
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+
+
 .delete-icon {
-    width: 50px;
+    width: 30px;
     position: absolute;
     right: 0;
     top: 0;
@@ -154,7 +164,71 @@ img {
 
 #cloud-upload {
     width: 5rem;
+    cursor: pointer;
+    margin: 2rem;
 }
+
+#uploadBtn {
+    background-color: darkcyan; /* Green */
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    /* margin: auto; */
+    border-radius: 1rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+#uploadBtn:hover {
+    background-color: lightgreen;
+    color: black;
+    font-weight: 500;
+}
+
+/* .photoUpload {
+    display: flex;
+    flex-direction: row;
+} */
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#setFileName {
+    display: none;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
+#setFileName input[type=text] {
+    display: inline-block;
+    padding: 0;
+    margin: 0.5rem;
+    max-width: 20rem;
+    max-height: 2rem;
+    box-shadow: 1px 1px darkslategrey;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#progressBar {
+    display: none;
+}
+
+
+
+
+
 
 
 /* FOR PROFILE PAGE */
@@ -187,13 +261,13 @@ img {
     margin-left: 1rem;
 }
 
-input[type=file] {
+.profileSettings input[type=file] {
     font-size: 0.8rem;
     padding-left: 3rem;
 }
 
-input[type=text],
-input[type=password] {
+.profileSettings input[type=text],
+.profileSettings input[type=password] {
     display: block;
     padding: 0.5rem;
     min-width: 20rem;
