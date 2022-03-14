@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     function profileData() {
         auth.onAuthStateChanged((user) => {
+            if (!user) return;
             setHeaderUserData();
             const uid = user.uid;
             console.log(user)
@@ -26,8 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementsByName('lName')[0].value = `${lName}`;
                     document.getElementById('email').innerHTML = `${email}`;
                     document.getElementsByName('contact')[0].value = `${contact}`;
-                    document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
-                } 
+                    if (photoURL){
+                        document.getElementById('profilePhoto').setAttribute(`src`, `${photoURL}`);
+                    }
+                }
                 }).catch((error) => {
                     console.log("Error getting document:", error);
             });

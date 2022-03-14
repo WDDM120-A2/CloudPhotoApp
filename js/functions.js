@@ -58,6 +58,7 @@ async function logOut(){
   try {
     const {auth} = getFirebaseModules();
     await auth.signOut();
+    window.location.pathname = '/';
   } catch (e){
     logError(e);
   }
@@ -70,13 +71,15 @@ async function setHeaderUserData () {
     console.log(user)
     const auth = firebase.auth();
     auth.onAuthStateChanged((user) => {
-      if (user) {
+      if (!user) return;
+
+      if (user.photoURL) {
         document.getElementById('headerUserImg').setAttribute(`src`, `${user.photoURL}`);
       }
     })
 
-    if (user.contact){
-      document.getElementById('headerPhoneNumber').textContent = user.contact;
+    if (user.phoneNumber){
+      document.getElementById('headerPhoneNumber').textContent = user.phoneNumber;
     }
 
     if (user.displayName){
