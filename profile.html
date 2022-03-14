@@ -17,6 +17,10 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid justify-content-start" id="header">
+      
+      <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
+      <a href="gallery.html" class="navbar-brand">Gallery</a>
+      <a href="profile.html" class="navbar-brand">Account</a>
       <section class="profile">
         <img src="img/default-image.png" id="headerUserImg" alt="user image">
         <section class="user-data">
@@ -24,9 +28,6 @@
           <div id="headerPhoneNumber">Your phone number</div>
         </section>
       </section>
-      <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
-      <a href="gallery.html" class="navbar-brand">Gallery</a>
-      <a href="profile.html" class="navbar-brand">Account</a>
       <img id="logout-button" onclick="logOut()" src="img/sign-out.svg" alt="sign out button"/>
     </div>
   </nav>
@@ -34,39 +35,43 @@
 
 <h1 id="myProfile">Your Info</h1>
 
-<form class="profileSettings">
+<div class="profileSettings">
  
     <div id="photoSection">
       <img src="" alt="" id="profilePhoto">
-      <progress id="progressBar" value="0" max="100">0%</progress>
       <h3 id="displayName"></h3>
+      <p id="email"></p>
       <input type="file" value="Upload" accept=".jpg,.jpeg,.png,.gif" id="selectPhoto">
       <button id="dpUploader" type="submit">Upload</button>
     </div>
+
     <div id="personalInfo">
         <h2>Basic Info</h2>
-        <label for="fName">First Name</label>
-        <input name="fName" type="text" placeholder="">
-        <label for="lName">Last Name</label>
-        <input name="lName" type="text" placeholder="">
-        <label for="email">Email</label>
-        <input name="email" type="text" placeholder="">
-        <label for="contact">Contact Number</label>
-        <input name="contact" type="text" placeholder="Contact">
-        <button id="updateBtn" type="submit">Update Profile</button>
-    </div>
-    <div id="security">
-      <h2>Password</h2>
-      <label for="oldPass">Old Password</label>
-      <input name="oldPass" type="password">
-      <label for="newPass">New Password</label>
-      <input name="newPass" type="password">
-      <label for="repeatPass">Repeat New Password</label>
-      <input name="repeatPass" type="password">
-      <button id="pwdBtn">Change Password</button>
+        <!-- <form class="personalForm"> -->
+          <label for="fName">First Name</label>
+          <input id="fName" name="fName" type="text" placeholder="">
+          <label for="lName">Last Name</label>
+          <input id="lName" name="lName" type="text" placeholder="">
+          <label for="contact">Contact Number</label>
+          <input id="contact" name="contact" type="text" placeholder="">
+          <input id="updateBtn" type="submit" value="Update Profile"></input>
+        <!-- </form> -->
     </div>
     
-  </form>
+    <div id="security">
+      <h2>Password</h2>
+      <form class="securityForm">
+        <label for="oldPass">Old Password</label>
+        <input id="oldPass" name="oldPass" type="password">
+        <label for="newPass">New Password</label>
+        <input id="newPass" name="newPass" type="password">
+        <label for="confirmPass">Confirm Password</label>
+        <input id="confirmPass" name="confirmPass" type="password">
+        <button id="pwdBtn">Change Password</button>
+      </form>
+    </div>
+    
+  </div>
 
 
 
