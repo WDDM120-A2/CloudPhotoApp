@@ -78,8 +78,8 @@ async function setHeaderUserData () {
       }
     })
 
-    if (user.contact){
-      document.getElementById('headerPhoneNumber').textContent = user.contact;
+    if (user.phoneNumber){
+      document.getElementById('headerPhoneNumber').textContent = user.phoneNumber;
     }
 
     if (user.displayName){
