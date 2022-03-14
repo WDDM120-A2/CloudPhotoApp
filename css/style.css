@@ -85,9 +85,16 @@ form{
     margin-left: 10px;
 }
 
-#headerUserImg {
+/* #headerUserImg {
     width: 40px;
     object-fit: contain;
+} */
+
+
+#headerUserImg {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
 }
 @media screen and (max-width: 750px) {
     .container {
@@ -141,6 +148,14 @@ img {
     cursor: pointer;
 }
 
+.image-upload>input {
+    display: none;
+}
+
+#cloud-upload {
+    width: 5rem;
+}
+
 
 /* FOR PROFILE PAGE */
 .profileSettings {
@@ -151,16 +166,37 @@ img {
 }
 
 #profilePhoto {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     margin: 2rem;
+}
+
+#photoSection {
+    align-items: center;
+    margin-top: 5rem;
+    padding: auto;
+}
+
+#personalInfo h2 {
+    margin-bottom: 1.7rem;
+}
+
+#personalInfo label,
+#personalInfo input[type=text] {
+    margin-left: 1rem;
+}
+
+input[type=file] {
+    font-size: 0.8rem;
+    padding-left: 3rem;
 }
 
 input[type=text],
 input[type=password] {
     display: block;
     padding: 0.5rem;
+    min-width: 20rem;
     margin-bottom: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 2px 1px darkslategrey;
@@ -176,27 +212,22 @@ input[type=password]:focus {
     border: 3px solid #555;
 }
 
-#progressBar {
-    display: none;
-    margin: 1rem;
-    width: 10rem;
-}
 
 #photoSection,
 #personalInfo,
 #security {
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
 }
 
-#photoSection {
-    align-items: center;
-}
 
+#photoSection,
 #personalInfo,
 #security {
-    flex-grow: 0.2;
+    flex-grow: 0.1;
 }
+
 
 #dpUploader,
 #updateBtn,
@@ -208,14 +239,28 @@ input[type=password]:focus {
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
-    margin: 2rem;
+    margin: auto;
     border-radius: 1rem;
     /* width: 40%; */
     cursor: pointer;
 }
 
+#updateBtn,
+#dpUploader,
+#pwdBtn {
+    min-width: 10rem;
+    text-align: center;
+}
+
 #dpUploader {
-    min-width: 8rem;
+    background-color: darkcyan;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+#pwdBtn {
+    margin-left: 5rem;
+    margin-top: 0.7rem;
 }
 
 #dpUploader:hover,
@@ -225,6 +270,8 @@ input[type=password]:focus {
     color: black;
 }
 
+
+  
 
 
   
