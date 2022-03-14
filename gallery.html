@@ -17,6 +17,10 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid justify-content-start" id="header">
+      
+      <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
+      <a href="gallery.html" class="navbar-brand">Gallery</a>
+      <a href="profile.html" class="navbar-brand">Account</a>
       <section class="profile">
         <img src="img/default-image.png" id="headerUserImg" alt="user image">
         <section class="user-data">
@@ -24,9 +28,6 @@
           <div id="headerPhoneNumber">Your phone number</div>
         </section>
       </section>
-      <img id="humber-logo" src="./img/humber_logo.svg" alt="Humber logo">
-      <a href="gallery.html" class="navbar-brand">Gallery</a>
-      <a href="profile.html" class="navbar-brand">Account</a>
       <img id="logout-button" onclick="logOut()" src="img/sign-out.svg" alt="sign out button"/>
     </div>
   </nav>
@@ -35,8 +36,18 @@
 <div class="photoUpload">
   <div id="photoupload">
     <progress id="progressBar" value="0" max="100">0%</progress>
-    <input type="file" value="Upload" accept=".jpg,.jpeg,.png,.gif" id="fileUpload">
-    <div id="setFileName">
+
+    <div class="image-upload">
+      <label for="fileUpload">
+        <img src="./img/upload.png" alt="" id="cloud-upload">
+      </label>
+      
+    
+      <input type="file" value="Upload" accept=".jpg,.jpeg,.png,.gif" id="fileUpload">
+    
+    </div>
+
+  <div id="setFileName">
       <p>File Name:</p>
       <input type="text" id="imgName">
     </div> 
