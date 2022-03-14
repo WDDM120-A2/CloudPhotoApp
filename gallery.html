@@ -22,7 +22,9 @@
       <a href="gallery.html" class="navbar-brand">Gallery</a>
       <a href="profile.html" class="navbar-brand">Account</a>
       <section class="profile">
-        <img src="img/default-image.png" id="headerUserImg" alt="user image">
+        <a href="profile.html">
+          <img src="img/default-image.png" id="headerUserImg" alt="user image">
+        </a>
         <section class="user-data">
           <div id="headerDisplayName">Your name</div>
           <div id="headerPhoneNumber">Your phone number</div>
@@ -34,25 +36,29 @@
 </header>
 
 <div class="photoUpload">
-  <div id="photoupload">
-    <progress id="progressBar" value="0" max="100">0%</progress>
-
-    <div class="image-upload">
-      <label for="fileUpload">
-        <img src="./img/upload.png" alt="" id="cloud-upload">
-      </label>
+  <div id="uploadSection">
+    <div id="selectUpload">
       
+  
+      <div class="image-upload">
+        <h4>Select a photo:</h4>
+        <label for="fileUpload">
+          <img src="./img/upload.png" alt="" id="cloud-upload">
+        </label>
     
-      <input type="file" value="Upload" accept=".jpg,.jpeg,.png,.gif" id="fileUpload">
-    
+        <input type="file" value="Upload" accept=".jpg,.jpeg,.png,.gif" id="fileUpload">
+        <progress id="progressBar" value="0" max="100">0%</progress>
+      </div>
     </div>
-
-  <div id="setFileName">
-      <p>File Name:</p>
-      <input type="text" id="imgName">
-    </div> 
-    <button type="submit" id="uploadBtn">Upload</button>
+  
+    <div id="setFileName">
+        <p id="fileNameText">File Name:</p>
+        <input type="text" id="imgName">
+        <button type="submit" id="uploadBtn">Upload</button>
+    </div>
   </div>
+</div>
+  
 
   <div class="gallery" id="gallery"></div>
 </div>
