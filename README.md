@@ -5,6 +5,10 @@ Web application inspired by Google photo album. This app uses Firebase and Boots
 npm install
 npm start
 
+#Purpose:
+
+This assignment will deepen students’ understanding of a variety of key concepts when building an online application utilizing a database.
+
 ----------------------------------------------------------------------------------
 structure for user
 {
@@ -25,22 +29,22 @@ structure for picture
 
 -----------------------------------------------------------------------------------
 
-#TODO
+#Features
+- Register Account
+- Login/Logoff Account
+- Upload Image
+- Generate Download Link
+- Delete Image
+- Change/Upload Profile Image
+- Update Basic Info
+- Change Password
 
-(Faye)
-User UID was set to folder name to distinguish which image folder to take. We can expand this to like dropbox and create another folder for documents etc.
-Next To Do:
-1. Download
-2. Share via email???
-3. CSS (including user and picture structure)
+#Pages
+- Login/Register 
+- Gallery
+- Profile
 
------------------------------------------------------------------------------------
-(Elizabeth)
-Can generate download link now. 
-Image descriptions can now be saved in Firestore database (not sure if my understanding of this task is correct).
-Added working delete button.
-
-To Do:
-CSS (I started a few fixes but not much, will continue today and tomorrow)
-Folder for Images
-Share via Email
+#Members
+- Olha Holovina
+- Christa Faye Reyes
+- Elizabeth Francisco
