@@ -124,14 +124,6 @@ footer {
     padding-left: 20px;
     margin-top: auto;
 }
-/*Gallery*/
-.gallery{
-    margin: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: left;
-}
 
 
 .img_wrapper{ 

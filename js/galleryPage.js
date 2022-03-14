@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     
                         const imgWrapper = document.createElement("div");
-                        imgWrapper.className = "img_wrapper";
+                        imgWrapper.className = "img_wrapper m-auto";
 
                         const img = document.createElement("img");
-                        img.className = "uploadedImage shadow bg-white rounded";
+                        img.className = "uploadedImage m-3 shadow bg-white rounded";
                         img.src = downloadURL;
 
                         //Delete an image
