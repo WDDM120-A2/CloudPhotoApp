@@ -58,6 +58,7 @@ async function logOut(){
   try {
     const {auth} = getFirebaseModules();
     await auth.signOut();
+    window.location.pathname = '/';
   } catch (e){
     logError(e);
   }
@@ -70,7 +71,9 @@ async function setHeaderUserData () {
     console.log(user)
     const auth = firebase.auth();
     auth.onAuthStateChanged((user) => {
-      if (user) {
+      if (!user) return;
+
+      if (user.photoURL) {
         document.getElementById('headerUserImg').setAttribute(`src`, `${user.photoURL}`);
       }
     })
