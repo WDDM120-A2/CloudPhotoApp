@@ -138,13 +138,13 @@ footer {
     position: relative;
     margin: 1rem;
     padding: 0.75rem;
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
     /* border-radius: 1rem; */
 }
 
 .uploadedImage {
     /* width: 20rem; */
-    height: 10rem;
+    max-height: 20rem;
     border-radius: 0.5rem;
 }
 
@@ -152,10 +152,11 @@ footer {
 .delete-icon {
     width: 30px;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 15px;
+    top: 15px;
     background: #e8e8e8a6;
-    cursor: pointer;
+    /* border-radius: 3px;
+    cursor: pointer; */
 }
 
 .image-upload>input {
