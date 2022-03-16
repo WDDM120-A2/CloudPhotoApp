@@ -58,6 +58,7 @@ async function logOut(){
   try {
     const {auth} = getFirebaseModules();
     await auth.signOut();
+    const isLocalhost = window.location.host.includes('localhost');
     window.location.pathname = isLocalhost ? '/': '/PhotoGalleryApp';
   } catch (e){
     logError(e);
