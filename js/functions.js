@@ -29,7 +29,8 @@ function initHandlers(){
     auth.onAuthStateChanged((user) => {
       if (user) {
         const pathname = window.location.pathname;
-        const galleryPath = '/gallery.html';
+
+        const galleryPath = window.location.host.includes('localhost') ? '/gallery.html' : '/PhotoGalleryApp/gallery.html';
         if (pathname !== galleryPath) {
 
           const currentPage = sessionStorage.getItem('currentPage');
