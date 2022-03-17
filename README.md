@@ -37,7 +37,7 @@ structure for picture
 - Delete Image
 - Change/Upload Profile Image
 - Update Basic Info
-- Change Password
+- Change Password (Feature not working on GitHub pages due to GitHub's Permissions-Policy header: 'interest-cohort'.)
 
 #Pages
 - Login/Register 
