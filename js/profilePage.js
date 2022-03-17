@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const oldPass = document.getElementById("oldPass").value;
         const newPass = document.getElementById("newPass").value;
         const confirmPass = document.getElementById("confirmPass").value;
-        const credential = firebase.auth.EmailAuthProvider.credential(user.email,oldPass);
+        // const credential = firebase.auth.EmailAuthProvider.credential(user.email,oldPass);
         // Reauthenticate
         // user.reauthenticateWithCredential(credential);
         user.signInWithEmailAndPassword('email', oldPass)
