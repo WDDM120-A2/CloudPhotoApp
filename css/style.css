@@ -79,10 +79,13 @@ form{
 
 .profile {
     display: flex;
+    
+    /* flex-direction: flex-end; */
 }
 
 .user-data {
-    margin-left: 10px;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
 }
 
 /* #headerUserImg {
