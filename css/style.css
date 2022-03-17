@@ -127,14 +127,6 @@ footer {
     padding-left: 20px;
     margin-top: auto;
 }
-/*Gallery*/
-.gallery{
-    margin: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: left;
-}
 
 
 .img_wrapper{ 
@@ -151,15 +143,13 @@ footer {
     border-radius: 0.5rem;
 }
 
-
 .delete-icon {
     width: 30px;
     position: absolute;
     right: 15px;
     top: 15px;
     background: #e8e8e8a6;
-    /* border-radius: 3px;
-    cursor: pointer; */
+    cursor: pointer;
 }
 
 .image-upload>input {
@@ -195,15 +185,15 @@ footer {
 /* .photoUpload {
     display: flex;
     flex-direction: row;
-} */
+} 
 
 .image-upload {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+   justify-content: center; 
     align-items: center;
     margin-top: 2rem;
-}
+}*/
 
 #setFileName {
     display: none;

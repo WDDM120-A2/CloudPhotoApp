@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     
                         const imgWrapper = document.createElement("div");
-                        imgWrapper.className = "img_wrapper";
+                        imgWrapper.className = "img_wrapper m-auto";
 
                         const img = document.createElement("img");
                         img.className = "uploadedImage shadow bg-white rounded";
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         //Delete an image
                         const deleteBtn = document.createElement("span");
 
-                        deleteBtn.innerHTML= `<img class="delete-icon rounded" src="./img/delete-icon.svg">` ;
+                        deleteBtn.innerHTML= `<img class="delete-icon rounded position-absolute" src="./img/delete-icon.svg">` ;
 
                         deleteBtn.addEventListener("click", function(){
                           itemRef

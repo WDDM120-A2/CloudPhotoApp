@@ -24,12 +24,12 @@ async function getUser(){
 function initHandlers(){
   document.addEventListener("DOMContentLoaded", function () {
     const {auth} = getFirebaseModules();
-    const galleryPath = '/gallery.html';
-
+    const isLocalhost = window.location.host.includes('localhost');
     auth.onAuthStateChanged((user) => {
       if (user) {
         const pathname = window.location.pathname;
-        const galleryPath = '/gallery.html';
+
+        const galleryPath = isLocalhost ? '/gallery.html' : '/PhotoGalleryApp/gallery.html';
         if (pathname !== galleryPath) {
 
           const currentPage = sessionStorage.getItem('currentPage');
@@ -46,8 +46,8 @@ function initHandlers(){
         }
       } else {
         const pathname = window.location.pathname;
-        if (pathname === galleryPath) {
-          window.location.pathname = '/';
+        if (pathname.includes('gallery') || pathname.includes('profile')) {
+          window.location.pathname = isLocalhost ? '/': '/PhotoGalleryApp';
         }
       }
     });
@@ -58,7 +58,8 @@ async function logOut(){
   try {
     const {auth} = getFirebaseModules();
     await auth.signOut();
-    window.location.pathname = '/';
+    const isLocalhost = window.location.host.includes('localhost');
+    window.location.pathname = isLocalhost ? '/': '/PhotoGalleryApp';
   } catch (e){
     logError(e);
   }
